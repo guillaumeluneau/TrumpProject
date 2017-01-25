@@ -15,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - Foregroung
+  - Foreground
   - Background
-  - 
+  - BackgroundElement
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1093696345
+    locked: 0
+  - name: BackgroundElement
+    uniqueID: 1040753849
     locked: 0
   - name: Foreground
     uniqueID: 1859086223
