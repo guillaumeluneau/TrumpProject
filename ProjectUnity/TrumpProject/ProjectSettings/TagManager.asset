@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ennemi
-  - New Tag
+  - Enemy
+  - shot
   layers:
   - Default
   - TransparentFX
@@ -18,9 +18,9 @@ TagManager:
   - Foreground
   - Background
   - BackgroundElement
-  - 
-  - 
-  - 
+  - Enemy
+  - Bullet
+  - Player
   - 
   - 
   - 
