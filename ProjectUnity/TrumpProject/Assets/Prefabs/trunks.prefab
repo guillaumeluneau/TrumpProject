@@ -74,7 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5339653089cc30b41b5f9f14e03deb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
+  posCurrent: {x: 0, y: 0, z: 0}
+  posPrecedente: {x: 0, y: 0, z: 0}
 --- !u!114 &11493266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +129,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: speed
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: sound

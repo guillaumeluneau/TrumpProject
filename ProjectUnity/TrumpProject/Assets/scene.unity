@@ -2593,7 +2593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  isOnGround: 0
+  isOnGround: 1
   jumpPower: 7
 --- !u!114 &342107425
 MonoBehaviour:
@@ -7306,6 +7306,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1618912773}
   m_RootOrder: 128
+--- !u!1 &1057492631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1057492633}
+  - 114: {fileID: 1057492632}
+  m_Layer: 0
+  m_Name: Repop (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1057492632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057492631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed2af2442a85254d9b1876c2b409923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 176212, guid: 3329a5e4dbb73804580068922a2eca50, type: 2}
+  spawnTime: 1
+  spawnPoint: {fileID: 1057492633}
+--- !u!4 &1057492633
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057492631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 71, y: 1.29, z: 0.8188911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &1063418360
 GameObject:
   m_ObjectHideFlags: 0
