@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = "Score" + score;
+        scoreText.text = "Score : " + score;
 	}
 
     public void AddScore(int bonusScore)
@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour {
         UpdateScore();
     }
 
-    void UpdateScore()
+   public void UpdateScore()
     {
         scoreText.text = "Score" + score;
     }

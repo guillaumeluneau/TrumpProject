@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   sound: {fileID: 135358, guid: dc9cd2fd26a060a47a5ede03d72bca5f, type: 2}
+  oui: {fileID: 0}
 --- !u!212 &21213734
 SpriteRenderer:
   m_ObjectHideFlags: 1

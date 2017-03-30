@@ -2592,9 +2592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7400d06fad09ac4cbe427722a55f643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   isOnGround: 1
-  jumpPower: 7
+  jumpPower: 10
 --- !u!114 &342107425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4352,6 +4352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 734229517}
+  controller: {fileID: 702275678}
 --- !u!61 &665337303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4570,6 +4571,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1618912773}
   m_RootOrder: 76
+--- !u!1 &702275677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 702275679}
+  - 114: {fileID: 702275678}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &702275678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702275677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d213c2583b9a9e43bea88d78c479853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1006983849}
+  score: 0
+--- !u!4 &702275679
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702275677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.9289246, y: 2.8466117, z: -4.359375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &703336825
 GameObject:
   m_ObjectHideFlags: 0
@@ -6870,6 +6912,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1317872263}
   m_RootOrder: 17
+--- !u!1 &1006983848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1006983850}
+  - 132: {fileID: 1006983849}
+  m_Layer: 5
+  m_Name: ScoreText
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &1006983849
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1006983848}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: ' 0'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190335
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1006983850
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1006983848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &1013146277
 GameObject:
   m_ObjectHideFlags: 0
@@ -7334,6 +7427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 176212, guid: 3329a5e4dbb73804580068922a2eca50, type: 2}
+  anEnnemy: {fileID: 0}
+  controller: {fileID: 0}
   spawnTime: 1
   spawnPoint: {fileID: 1057492633}
 --- !u!4 &1057492633
@@ -10177,7 +10272,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a5fde9182af805f46a1c119773794eb1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.226
+  m_Volume: 0.014
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13530,6 +13625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 153638, guid: 1a4fa5bf0eb71b2429bfee0e4b5162ae, type: 2}
+  anEnnemy: {fileID: 0}
+  controller: {fileID: 0}
   spawnTime: 3
   spawnPoint: {fileID: 2083612451}
 --- !u!1 &2084892945

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
-    public GameObject enemy;
+    public Enemy enemy;
+    public GameController controller;
     public float spawnTime = 3f;            
     public Transform spawnPoint;
 
@@ -14,6 +15,7 @@ public class Spawner : MonoBehaviour {
 
     void Spawn()
     {
+        enemy.controller = controller;
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 }
