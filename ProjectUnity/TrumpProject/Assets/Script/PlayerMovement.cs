@@ -35,9 +35,12 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        m_Anim.SetBool("Ground", isOnGround);
         MovePlayer();
         Jump();
-        m_Anim.SetFloat("vSpeed", _rigidbody.velocity.y);
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, 0.2f, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -48,32 +51,37 @@ public class PlayerMovement : MonoBehaviour {
 
     void MovePlayer()
     {
-        float translate = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(translate, 0, 0);
+        
+            float translate = Input.GetAxis("Horizontal") * speed;
+            //   transform.Translate(translate, 0, 0);
 
-        m_Anim.SetFloat("Speed", Mathf.Abs(speed));
+            m_Anim.SetFloat("Speed", Mathf.Abs(translate));
 
-        if (translate > 0 && playerDirection == Direction.LEFT)
-        {
-            playerDirection = Direction.RIGHT;
-            Flip();
+            _rigidbody.velocity = new Vector2(speed * translate, _rigidbody.velocity.y);
 
-        }
-        else if(translate < 0 && playerDirection == Direction.RIGHT)
+            m_Anim.SetFloat("vSpeed", _rigidbody.velocity.y);
+
+            if (translate > 0 && playerDirection == Direction.LEFT)
             {
-            playerDirection = Direction.LEFT;
-            Flip();
-        }
-        else
-        {
+                playerDirection = Direction.RIGHT;
+                Flip();
 
-        }
+            }
+            else if (translate < 0 && playerDirection == Direction.RIGHT)
+            {
+                playerDirection = Direction.LEFT;
+                Flip();
+            }
+        
+      
     }
 
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space)&& isOnGround)
+        if(Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
+            isOnGround = false;
+            m_Anim.SetBool("Ground", false);
             _rigidbody.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
     }
@@ -84,10 +92,6 @@ public class PlayerMovement : MonoBehaviour {
         m_Anim.SetBool("Ground", isOnGround);
     }
 
-    void OnCollisionExit2D()
-    {
-        isOnGround = false;
-    }
 
     private void Flip()
     {
