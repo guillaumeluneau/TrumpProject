@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour {
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
         transform.position = Vector3.Lerp(startMarker, endMarker, fracJourney);
-       if(gameObject.transform.position.x > 0)
+        if(gameObject.transform.position.x > 0)
         {
             gameObject.transform.rotation = new Quaternion(-0, -180, 0, 0);
         }

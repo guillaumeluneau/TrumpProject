@@ -5,6 +5,7 @@ public class DetroyEnemy : MonoBehaviour
 {
 
     public GameObject sound;
+    public GameObject soundEnd;
     public GameController controller;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -13,8 +14,15 @@ public class DetroyEnemy : MonoBehaviour
         {
             sound.GetComponent<AudioSource>().Play();
             Destroy(other.gameObject);
-            controller.AddScore(-1);
-            controller.UpdateScore();
+            controller.AddLife(-1);
+            controller.UpdateLife();
+        }
+        else if (other.gameObject.tag == "Boss")
+        {
+            soundEnd.GetComponent<AudioSource>().Play();
+            Destroy(other.gameObject);
+            controller.AddLife(-10);
+            controller.UpdateLife();
         }
     }
 }

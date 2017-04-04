@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 5.0f;
     public bool isOnGround = false;
     public float jumpPower = 7.0f;
-
+    public int turret;
     private Transform _transform;
     private Rigidbody2D _rigidbody;
     private Direction playerDirection = Direction.RIGHT;
@@ -76,6 +76,12 @@ public class PlayerMovement : MonoBehaviour {
       
     }
 
+    public void AddTurret(int bonusTurret)
+    {
+        turret += bonusTurret;
+    }
+    
+
     void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isOnGround)
@@ -85,7 +91,7 @@ public class PlayerMovement : MonoBehaviour {
             _rigidbody.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
     }
-
+    
     void OnCollisionEnter2D()
     {
         isOnGround = true;
@@ -95,6 +101,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Flip()
     {
+        
 
         // Multiply the player's x local scale by -1.
         Vector3 theScale = transform.localScale;
